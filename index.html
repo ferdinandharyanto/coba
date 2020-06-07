@@ -1,0 +1,157 @@
+<html>
+<head>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./js/package/dist/sweetalert2.min.css">
+    <title>For her</title>
+</head>
+<body>
+   <div class="container">
+    <button type="button" class="btn" id="test">
+      <i class="fas fa-question"></i>
+    </button>
+    <div class="content">
+      <p id="clock"></p>
+      <p id="you"></p>
+      <p id="surprise" class="glitch oke" data-text="Jadian Yuk?"></p>
+    </div>
+  </div>
+  <div class="area" >
+    <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+    </ul>
+  </div >
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+<script src="./js/package/dist/sweetalert2.min.js"></script>
+<script>
+$(document).ready(function () {
+  $('.oke').hide();
+  $("#test").click(function(){
+    Swal.fire({
+      title: 'Penasaran?',
+      text: "Kalo penasaran, coba klik iyah!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Iyah!',
+      cancelButtonText: 'Enggak!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire({
+          title: 'Masih Penasaran?',
+          text: "Kalo penasaran, coba klik iyah!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Iyah!',
+          cancelButtonText: 'Enggak!',
+          reverseButtons: true
+        }).then((result) =>{
+          if (result.value) {
+            Swal.fire({
+              title: 'hayooo masih Penasaran yah?',
+              text: "Kalo penasaran, coba klik iyah!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonText: 'Iyah!',
+              cancelButtonText: 'Enggak!',
+              reverseButtons: true
+            }).then((result) =>{
+              if (result.value) {
+                Swal.fire({
+                  title: 'Penasaran banget yah?',
+                  text: "Kalo penasaran, coba klik iyah!",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonText: 'Iyah!',
+                  cancelButtonText: 'Enggak!',
+                  reverseButtons: true
+                }).then((result) => {
+                    if (result.value) {
+                      Swal.fire(
+                        'Coba liat ada yang aneh gk di halaman utama',
+                        'Makasih :)',
+                        'success'
+                      )
+                      $('.oke').show();
+                    } else if (result.dismiss === Swal.DismissReason.cancel){
+                      Swal.fire(
+                        'Yah Engga Penasaran :(',
+                        'Penasaran dungs',
+                        'error'
+                      )
+                    }
+                })
+              } else if (result.dismiss === Swal.DismissReason.cancel){
+                Swal.fire(
+                  'Yah Engga Penasaran :(',
+                  'Penasaran dungs',
+                  'error'
+                )
+              }
+            })
+          } else if (result.dismiss === Swal.DismissReason.cancel) {
+            Swal.fire(
+              'Yah Engga Penasaran :(',
+              'Penasaran dungs',
+              'error'
+            )
+          }
+        })
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        Swal.fire(
+          'Yah Engga Penasaran :(',
+          'Penasaran dungs',
+          'error'
+        )
+      }
+    })
+  });
+  function time() {
+    var meridiem = "AM";
+    var currentTime = new Date();
+    var greet;
+    var hour = currentTime.getHours();
+    if (hour < 10) hour = "0" + hour;
+    if (hour < 12){
+        greet="Good Morning, Bila";
+    } else if(hour >= 12 && hour <= 17) {
+        greet="Good Afternoon, Bila";
+    } else if(hour >= 17 && hour <= 24){
+        greet="Good Night, Bila"
+    }
+    if (hour > 12) {
+      hour = hour - 12;
+      meridiem = "PM";
+    }
+    if (hour === 0) hour = 12;
+
+    var minute = currentTime.getMinutes();
+    if (minute < 10) minute = "0" + minute;
+    var second = currentTime.getSeconds();
+    if (second < 10) second = "0" + second;
+
+    var clockDiv = document.getElementById("clock");
+    var youDiv = document.getElementById("you");
+
+    clockDiv.innerText = hour + ":" + minute + ":" + second + " " + meridiem;
+    youDiv.innerText = greet
+  }
+  time();
+  setInterval(time, 1000);
+});
+</script>
+</html>
