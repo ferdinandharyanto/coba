@@ -1,42 +1,45 @@
 <html>
 <head>
     <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,900;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="./js/package/dist/sweetalert2.min.css">
     <title>For her</title>
 </head>
 <body>
    <div class="container">
-    <button type="button" class="btn" id="test">
-      <i class="fas fa-question"></i>
-    </button>
     <div class="content">
-      <p id="clock"></p>
-      <p id="you"></p>
-      <p id="surprise" class="glitch oke" data-text="Jadian Yuk?"></p>
+      <div class="block">
+        <div class="block_1">
+          <p id="clock"></p>
+          <button type="button" class="btn" id="test">
+            <i class="fas fa-question"></i>
+          </button>
+        </div>
+        <div class="block_2">
+            <h3 id="you" class="judul_awal"></h3>
+            <h3 class="text_after">
+              <span id="after" class="glitch surprise judul_akhir" data-text="Test12345"></span>
+            </h3>
+          <h3 class="name" data-tooltip="❤️ ">, Test</h3>
+        </div>
+      </div>
     </div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
   </div>
-  <div class="area" >
-    <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-    </ul>
-  </div >
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
 <script src="./js/package/dist/sweetalert2.min.js"></script>
 <script>
 $(document).ready(function () {
-  $('.oke').hide();
+  $('.judul_awal').show();
+  $('.judul_akhir').hide();
   $("#test").click(function(){
     Swal.fire({
       title: 'Penasaran?',
@@ -83,7 +86,8 @@ $(document).ready(function () {
                         'Makasih :)',
                         'success'
                       )
-                      $('.oke').show();
+                      $('.judul_awal').remove();
+                      $('.judul_akhir').show();
                     } else if (result.dismiss === Swal.DismissReason.cancel){
                       Swal.fire(
                         'Yah Engga Penasaran :(',
@@ -127,11 +131,11 @@ $(document).ready(function () {
     var hour = currentTime.getHours();
     if (hour < 10) hour = "0" + hour;
     if (hour < 12){
-        greet="Good Morning, Bila";
+        greet="Good Morning";
     } else if(hour >= 12 && hour <= 17) {
-        greet="Good Afternoon, Bila";
+        greet="Good Afternoon";
     } else if(hour >= 17 && hour <= 24){
-        greet="Good Night, Bila"
+        greet="Good Night"
     }
     if (hour > 12) {
       hour = hour - 12;
@@ -146,9 +150,13 @@ $(document).ready(function () {
 
     var clockDiv = document.getElementById("clock");
     var youDiv = document.getElementById("you");
+    var after = document.getElementById("after");
 
     clockDiv.innerText = hour + ":" + minute + ":" + second + " " + meridiem;
-    youDiv.innerText = greet
+    if (document.getElementById("you")) {
+      youDiv.innerText = greet;
+    }
+    after.innerText = greet;
   }
   time();
   setInterval(time, 1000);
