@@ -22,11 +22,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: black;
 }
 
 .block {
-    background: black;
     height: 50vh;
     width: 150vh;
     justify-content: center;
@@ -34,14 +32,12 @@
 }
 
 .block_1{
-  background: black;
   width: auto;
   height: 26vh;
   display: flex;
 }
 
 .block_2{
-  background: black;
   width: auto;
   height: 24vh;
   display: flex;
@@ -111,7 +107,6 @@
   z-index: 100;
   left:50px;
   top: 0px;
-  background: rgba(0,0,0,0.5);
   border: none;
   color: white;
   font-size: 30px;
@@ -122,7 +117,6 @@
   z-index: 100;
   left:2px;
   top: 0px;
-  background: rgba(0,0,0,0.5);
   border: none;
   color: white;
   font-size: 30px;
@@ -432,7 +426,6 @@ and (max-height: 568px){
   }
 
   .block {
-    background: black;
     height: 30vh;
     width: 57vh;
     justify-content: center;
@@ -440,14 +433,12 @@ and (max-height: 568px){
   }
 
   .block_1{
-    background: black;
     width: auto;
     height: 14vh;
     display: flex;
   }
   
   .block_2{
-    background: black;
     width: auto;
     height: 13vh;
     display: flex;
@@ -528,7 +519,6 @@ and (max-height: 667px){
   }
 
   .block {
-    background: black;
     height: 30vh;
     width: 47vh;
     justify-content: center;
@@ -536,14 +526,12 @@ and (max-height: 667px){
   }
 
   .block_1{
-    background: black;
     width: auto;
     height: 14vh;
     display: flex;
   }
   
   .block_2{
-    background: black;
     width: auto;
     height: 13vh;
     display: flex;
@@ -625,7 +613,6 @@ and (max-height: 812px)
   }
 
   .block {
-    background: black;
     height: 30vh;
     width: 47vh;
     justify-content: center;
@@ -633,14 +620,12 @@ and (max-height: 812px)
   }
 
   .block_1{
-    background: black;
     width: auto;
     height: 14vh;
     display: flex;
   }
   
   .block_2{
-    background: black;
     width: auto;
     height: 13vh;
     display: flex;
@@ -722,7 +707,6 @@ and (min-height: 812px)
   }
 
   .block {
-    background: black;
     height: 30vh;
     width: 47vh;
     justify-content: center;
@@ -730,14 +714,12 @@ and (min-height: 812px)
   }
 
   .block_1{
-    background: black;
     width: auto;
     height: 14vh;
     display: flex;
   }
   
   .block_2{
-    background: black;
     width: auto;
     height: 13vh;
     display: flex;
@@ -818,7 +800,6 @@ and (max-height: 736px){
   }
 
   .block {
-    background: black;
     height: 30vh;
     width: 47vh;
     justify-content: center;
@@ -826,14 +807,12 @@ and (max-height: 736px){
   }
 
   .block_1{
-    background: black;
     width: auto;
     height: 14vh;
     display: flex;
   }
   
   .block_2{
-    background: black;
     width: auto;
     height: 13vh;
     display: flex;
@@ -914,7 +893,6 @@ and (min-height: 736px){
   }
 
   .block {
-    background: black;
     height: 30vh;
     width: 47vh;
     justify-content: center;
@@ -922,14 +900,12 @@ and (min-height: 736px){
   }
 
   .block_1{
-    background: black;
     width: auto;
     height: 14vh;
     display: flex;
   }
   
   .block_2{
-    background: black;
     width: auto;
     height: 13vh;
     display: flex;
@@ -946,6 +922,99 @@ and (min-height: 736px){
     text-align: center;
     color: white;
     font-size: 59px;
+    font-weight: 700;
+    z-index: 100;
+  }
+
+  #you {
+      height: 100px;
+      left: 0;
+      right: 0;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      color: white;
+      font-size: 28px;
+      font-weight: 500;
+  }
+
+  .name {
+      height: 100px;
+      left: 0;
+      right: 0;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      color: white;
+      font-size: 28px;
+      font-weight: 500;
+  }
+
+  .text_after {
+    height: 100px;
+    left: 0;
+    right: 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  .surprise {
+    height: 100px;
+    margin: auto;
+    right: 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    font-weight: 500;
+    position: absolute;
+  }
+}
+
+@media only screen
+and (max-width: 383px)
+and (max-width: 763px){
+  .btn {
+    left: 1vh;
+    top: 1vh;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+  }
+
+  .block {
+    height: 30vh;
+    width: 47vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .block_1{
+    width: auto;
+    height: 14vh;
+    display: flex;
+  }
+  
+  .block_2{
+    width: auto;
+    height: 13vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #clock {
+    height: 100px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 50px;
     font-weight: 700;
     z-index: 100;
   }
