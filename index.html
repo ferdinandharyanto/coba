@@ -15,20 +15,20 @@
       <div class="block">
         <div class="block_1">
           <p id="clock"></p>
-          <!-- <a href="#" type="button" class="btn" id="test">
+          <a href="#" type="button" class="btn" id="test">
             <i class="fas fa-question"></i>
-          </a> -->
-          <a href="#" class="btn_gear" onclick="document.getElementById('foo').jscolor.show()" id="">
-            <i class="fas fa-cog"></i>
           </a>
+          <!-- <a href="#" class="btn_gear" onclick="document.getElementById('foo').jscolor.show()" id="">
+            <i class="fas fa-cog"></i>
+          </a> -->
+          <!-- <a href="#" id="toggle">TEst</a> -->
             <input type="hidden" class="jscolor {styleElement:'back',value:'000000'}" id="foo">
         </div>
         <div class="block_2">
             <h3 id="you" class="judul_awal"></h3>
-            <h3 class="text_after">
-              <span id="after" class="glitch surprise judul_akhir" data-text="Test12345"></span>
-            </h3>
-          <h3 class="name" data-tooltip="❤️ ">, Test</h3>
+            <h3 class="text_after"></h3>
+            <span id="after" class="glitch surprise judul_akhir" data-text="Jadian Yuk?"></span>
+          <h3 class="name" data-tooltip="❤️ ">, Bila</h3>
         </div>
       </div>
     </div>
@@ -145,7 +145,7 @@ $(document).ready(function () {
     } else if(hour >= 12 && hour <= 17) {
         greet="Good Afternoon";
     } else if(hour >= 17 && hour <= 24){
-        greet="Good Night"
+        greet="Good Evening"
     }
     if (hour > 12) {
       hour = hour - 12;
@@ -170,6 +170,22 @@ $(document).ready(function () {
   }
   time();
   setInterval(time, 1000);
+
+  var val = $('#foo').val();
+  console.log(val);
+
+  var state = true;
+  $( "#toggle" ).on( "click", function() {
+        $( "#back" ).animate({
+          backgroundColor: "#fff",
+          color: "#000000"
+        }, 1000 );
+        $( "#back" ).animate({
+          backgroundColor: "#00000",
+          color: "#fff"
+        }, 1000 );
+      state = !state;
+  });
 });
 </script>
 </html>
